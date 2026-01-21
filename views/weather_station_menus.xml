@@ -1,0 +1,10 @@
+<odoo>
+    <!-- Top-level menu with Font Awesome icon -->
+    <menuitem id="weather_station_menu_root" name="Weather Station" web_icon="fa-cloud"/>
+
+    <!-- Submenu for Stations -->
+    <menuitem id="weather_station_menu_stations" name="Stations" parent="weather_station_menu_root" action="weather_station_station_action"/>
+
+    <!-- Submenu for Locations -->
+    <menuitem id="weather_station_menu_locations" name="Locations" parent="weather_station_menu_root" action="weather_station_location_action"/>
+</odoo>

@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="location_1" model="weather_station.location">
+            <field name="name">Location 1</field>
+        </record>
+        <record id="station_1" model="weather_station.station">
+            <field name="name">Weather Station 1</field>
+            <field name="location_id" ref="location_1"/>
+        </record>
+    </data>
+</odoo>
