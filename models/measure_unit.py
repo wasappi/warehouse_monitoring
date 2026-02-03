@@ -2,7 +2,7 @@ from odoo import models, fields
 from odoo.exceptions import ValidationError, UserError
 
 class MeasureUnit(models.Model):
-    _name = "weather_station.measure_unit"
+    _name = "warehouse_monitoring.measure_unit"
     _descriptino = "The unit of a measure"
 
     name = fields.Char(name="Unit name", required=True)

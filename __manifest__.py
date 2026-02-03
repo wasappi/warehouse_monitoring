@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Weather Station',
+    'name': 'Warehouse Monitoring',
     'version': '1.0',
-    'summary': 'Weather Station Management',
+    'summary': 'Warehouse Monitoring Management',
     'category': 'IoT',
     'author': 'Lionel Bauwin',
     'license': 'LGPL-3',
@@ -13,10 +13,20 @@
         'security/res_groups.xml',
         'security/ir.model.access.csv',
         # views
-        'views/weather_measures_views.xml',
-        'views/weather_station_menus.xml',
+        'views/warehouse_monitoring_views.xml',
+        'views/warehouse_monitoring_menus.xml',
+        'demo/demo.xml'
     ],
     'demo': [
         'demo/demo.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'warehouse_monitoring/static/src/*.js', 
+            'warehouse_monitoring/static/src/*.xml',
+        ],
+        'warehouse_monitoring.dashboard': [
+            'warehouse_monitoring/static/src/dashboard/**/*',
+        ]
+    },
 }

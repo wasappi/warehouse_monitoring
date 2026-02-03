@@ -1,0 +1,6 @@
+<t t-name="warehouse_monitoring.value_card">
+    <div class="text-center">
+        <h5 t-esc="props.title"/>
+        <h2 t-esc="props.value" class="text-primary"/>
+    </div>
+</t>

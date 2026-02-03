@@ -1,0 +1,33 @@
+<odoo>
+    <!-- Top-level menu with Font Awesome icon -->
+    <menuitem id="warehouse_monitoring_menu_root" name="Warehouse Monitoring" web_icon="fa-cloud"/>
+
+    <!-- Submenu for Dashboard -->
+    <record model="ir.actions.client" id="warehouse_monitoring_dashboard_action">
+        <field name="name">Warehouse Dashboard</field>
+        <field name="tag">warehouse_monitoring.dashboard</field>
+    </record>
+
+    <menuitem id="warehouse_monitoring_menu_dashboard" 
+              name="Dashboard" 
+              parent="warehouse_monitoring_menu_root" 
+              action="warehouse_monitoring_dashboard_action" 
+              sequence="1"/>
+
+    <!-- Submenu for Stations -->
+    <menuitem id="warehouse_monitoring_menu_stations" name="Stations" parent="warehouse_monitoring_menu_root" action="warehouse_monitoring_station_action"/>
+
+    <!-- Submenu for Locations -->
+    <menuitem id="warehouse_monitoring_menu_locations" name="Locations" parent="warehouse_monitoring_menu_root" action="warehouse_monitoring_location_action"/>
+
+    <!-- Submenu for Measure -->
+    <menuitem id="warehouse_monitoring_menu_measures" name="Measures" parent="warehouse_monitoring_menu_root" action="warehouse_monitoring_measure_action"/>
+
+    <menuitem id="warehouse_monitoring_menu_measure_root" name="Measure Settings" parent="warehouse_monitoring_menu_root"/>
+
+    <!-- Submenu for Measure Category -->
+    <menuitem id="warehouse_monitoring_menu_measure_categories" name="Measure Categories" parent="warehouse_monitoring_menu_measure_root" action="warehouse_monitoring_measure_category_action"/>
+
+    <!-- Submenu for Measure Unit -->
+    <menuitem id="warehouse_monitoring_menu_measure_units" name="Measure Units" parent="warehouse_monitoring_menu_measure_root" action="warehouse_monitoring_measure_unit_action"/>
+</odoo>

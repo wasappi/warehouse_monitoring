@@ -1,5 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_weather_station_station,Weather Station - User Read,model_weather_station_station,base.group_user,1,0,0,0
-access_weather_station_station_manager,Weather Station - Manager Full,model_weather_station_station,weather_station.group_weather_manager,1,1,1,1
-weather_station.access_weather_station_location,Weather Station Location - User,weather_station.model_weather_station_location,base.group_user,1,1,1,1
-weather_station.access_weather_station_location_manager,Weather Station Location - Manager,weather_station.model_weather_station_location,weather_station.group_weather_manager,1,1,1,1
+access_warehouse_monitoring_station,Warehouse Monitoring - User Read,warehouse_monitoring.model_warehouse_monitoring_station,base.group_user,1,0,0,0
+access_warehouse_monitoring_station_manager,Warehouse Monitoring - Manager Full,warehouse_monitoring.model_warehouse_monitoring_station,warehouse_monitoring.group_warehouse_manager,1,1,1,1
+warehouse_monitoring.access_warehouse_monitoring_location,Warehouse Location - User,warehouse_monitoring.model_warehouse_monitoring_location,base.group_user,1,1,1,1
+warehouse_monitoring.access_warehouse_monitoring_location_manager,Warehouse Location - Manager,warehouse_monitoring.model_warehouse_monitoring_location,warehouse_monitoring.group_warehouse_manager,1,1,1,1
+warehouse_monitoring.access_warehouse_monitoring_measure,Warehouse Measure - User,warehouse_monitoring.model_warehouse_monitoring_measure,base.group_user,1,1,1,1
+warehouse_monitoring.access_warehouse_monitoring_measure_unit,Warehouse Measure Unit - User,warehouse_monitoring.model_warehouse_monitoring_measure_unit,base.group_user,1,1,1,1
+warehouse_monitoring.access_warehouse_monitoring_measure_category,Warehouse Measure Category - User,warehouse_monitoring.model_warehouse_monitoring_measure_category,base.group_user,1,1,1,1

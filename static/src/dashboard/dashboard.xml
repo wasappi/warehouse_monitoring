@@ -1,0 +1,21 @@
+<templates xml:space="preserve">
+    <t t-name="warehouse_monitoring.dashboard">
+        <Layout className="'o_dashboard h-100'" display="{ controlPanel: {} }">
+            <t t-set-slot="layout-buttons">
+                <button class="btn btn-outline-secondary" t-on-click="openConfiguration">
+                    <i class="fa fa-gear"/> Configuration
+                </button>
+            </t>
+            <div class="p-3">
+                <h1>Warehouse Monitoring Dashboard</h1>
+
+                <t t-foreach="displayedItems" t-as="item" t-key="item.id">
+                    <Card size="item.size || 1">
+                        <t t-set="itemProps" t-value="item.props ? item.props(statistics.data) : {'data': statistics.data}"/>
+                        <t t-component="item.Component" t-props="itemProps" />
+                    </Card>
+                </t>                
+            </div>
+        </Layout>
+    </t>
+</templates>

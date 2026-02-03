@@ -1,0 +1,7 @@
+<t t-name="warehouse_monitoring.card">
+    <div class="card d-inline-block m-2 shadow-sm" t-att-style="itemStyle">          
+        <div class="card-body">
+            <t t-slot="default"/>
+        </div>
+    </div>
+</t>

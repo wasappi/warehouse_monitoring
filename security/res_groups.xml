@@ -1,5 +1,5 @@
 <odoo>
-    <record id="group_weather_manager" model="res.groups">
-        <field name="name">Weather Station Manager</field>
+    <record id="group_warehouse_manager" model="res.groups">
+        <field name="name">Warehouse Monitoring Manager</field>
     </record>
 </odoo>

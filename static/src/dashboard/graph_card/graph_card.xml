@@ -1,0 +1,7 @@
+<templates xml:space="preserve">
+    <t t-name="warehouse_monitoring.graph_card">
+        <div class="chart-container" style="position: relative; height:20vh; width:100%">
+            <canvas t-ref="canvas"></canvas>
+        </div>
+    </t>
+</templates>

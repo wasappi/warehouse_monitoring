@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="warehouse_monitoring_stations_search_view" model="ir.ui.view">
+        <field name="name">warehouse_monitoring.station.search</field>
+        <field name="model">warehouse_monitoring.station</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Form view for warehouse stations -->
+    <record id="warehouse_monitoring_stations_view_form" model="ir.ui.view">
+        <field name="name">warehouse_monitoring.station.form</field>
+        <field name="model">warehouse_monitoring.station</field>
+        <field name="arch" type="xml">
+            <form string="Warehouse Monitoring Station">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="location_id"/>
+                    </group>
+                    <group>
+                        <field name="measure_ids">
+                            <list string="Measures">
+                                <field name="value"/>
+                                <field name="measure_unit_id"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List of warehouse stations -->
+    <record id="warehouse_monitoring_stations_view_list" model="ir.ui.view">
+        <field name="name">warehouse_monitoring.station.list</field>
+        <field name="model">warehouse_monitoring.station</field>
+        <field name="arch" type="xml">
+            <list string="Stations">
+                <field name="name"/>
+                <field name="location_id"/>
+            </list>
+        </field>
+    </record>
+
+
+    <!-- List of categories -->
+    <record id="warehouse_monitoring_measure_category_view_list" model="ir.ui.view">
+        <field name="name">warehouse_monitoring.measure_category.list</field>
+        <field name="model">warehouse_monitoring.measure_category</field>
+        <field name="arch" type="xml">
+            <list string="Measure Categories">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="warehouse_monitoring_measure_category_view_form" model="ir.ui.view">
+        <field name="name">warehouse_monitoring.measure_category.form</field>
+        <field name="model">warehouse_monitoring.measure_category</field>
+        <field name="arch" type="xml">
+            <form string="Measure Category">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List of units -->
+    <record id="warehouse_monitoring_measure_unit_view_list" model="ir.ui.view">
+        <field name="name">warehouse_monitoring.measure_unit.list</field>
+        <field name="model">warehouse_monitoring.measure_unit</field>
+        <field name="arch" type="xml">
+            <list string="Measure Units">
+                <field name="name"/>
+                <field name="symbol"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="warehouse_monitoring_measure_unit_view_form" model="ir.ui.view">
+        <field name="name">warehouse_monitoring.measure_unit.form</field>
+        <field name="model">warehouse_monitoring.measure_unit</field>
+        <field name="arch" type="xml">
+            <form string="Measure Unit">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="symbol"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List of units -->
+    <record id="warehouse_monitoring_measure_view_list" model="ir.ui.view">
+        <field name="name">warehouse_monitoring.measure.list</field>
+        <field name="model">warehouse_monitoring.measure</field>
+        <field name="arch" type="xml">
+            <list string="Measures">
+                <field name="measurement_date"/>
+                <field name="measure_category_id"/>
+                <field name="measure_category_id"/>
+                <field name="value"/>
+                <field name="measure_unit_id"/>
+                <field name="station_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action for Stations list view -->
+    <record id="warehouse_monitoring_station_action" model="ir.actions.act_window">
+        <field name="name">Stations</field>
+        <field name="res_model">warehouse_monitoring.station</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first station</p>
+        </field>
+    </record>
+
+    <!-- Action for Locations list view -->
+    <record id="warehouse_monitoring_location_action" model="ir.actions.act_window">
+        <field name="name">Locations</field>
+        <field name="res_model">warehouse_monitoring.location</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first location</p>
+        </field>
+    </record>
+
+    <!-- Action for Measure list view -->
+    <record id="warehouse_monitoring_measure_action" model="ir.actions.act_window">
+        <field name="name">Measures</field>
+        <field name="res_model">warehouse_monitoring.measure</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first measure</p>
+        </field>
+    </record>
+
+    <!-- Action for Measure Category list view -->
+    <record id="warehouse_monitoring_measure_category_action" model="ir.actions.act_window">
+        <field name="name">Measures Category</field>
+        <field name="res_model">warehouse_monitoring.measure_category</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first measure category</p>
+        </field>
+    </record>
+
+    <!-- Action for Measure Unit list view -->
+    <record id="warehouse_monitoring_measure_unit_action" model="ir.actions.act_window">
+        <field name="name">Measures Unit</field>
+        <field name="res_model">warehouse_monitoring.measure_unit</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first measure unit</p>
+        </field>
+    </record>
+
+</odoo>
