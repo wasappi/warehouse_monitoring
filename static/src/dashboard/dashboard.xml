@@ -17,11 +17,11 @@
                                 <i class="fa fa-chevron-down ms-2 small opacity-75"/>
                             </button>
                             <t t-set-slot="content">
-                                <DropdownItem class="dropdown-item" onSelected="() => selectStation({ id: null, name: 'All Stations' })">
+                                <DropdownItem onSelected="() => selectStation({ id: null, name: 'All Stations' })">
                                     All Stations
                                 </DropdownItem>
                                 <t t-foreach="stations.data" t-as="station" t-key="station.id">
-                                    <DropdownItem class="dropdown-item" onSelected="() => selectStation(station)">
+                                    <DropdownItem onSelected="() => selectStation(station)">
                                         <t t-esc="station.name"/>
                                     </DropdownItem>
                                 </t>
@@ -35,7 +35,7 @@
                             </button>
                             <t t-set-slot="content">
                                 <t t-foreach="periods" t-as="period" t-key="period.days">
-                                    <DropdownItem class="dropdown-item" onSelected="() => selectPeriod(period)">
+                                    <DropdownItem onSelected="() => selectPeriod(period)">
                                         <t t-esc="period.label"/>
                                     </DropdownItem>
                                 </t>
