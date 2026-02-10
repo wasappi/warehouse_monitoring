@@ -1,21 +1,51 @@
 <templates xml:space="preserve">
-    <t t-name="warehouse_monitoring.dashboard">
-        <Layout className="'o_dashboard h-100'" display="{ controlPanel: {} }">
-            <t t-set-slot="layout-buttons">
-                <button class="btn btn-outline-secondary" t-on-click="openConfiguration">
-                    <i class="fa fa-gear"/> Configuration
-                </button>
-            </t>
-            <div class="p-3">
-                <h1>Warehouse Monitoring Dashboard</h1>
+<t t-name="warehouse_monitoring.dashboard">
+    <Layout className="'o_dashboard h-100 d-flex flex-column'" display="{ controlPanel: {} }">
+        <t t-set-slot="layout-buttons">
+            <button class="btn btn-outline-secondary" t-on-click="openConfiguration">
+                <i class="fa fa-gear"/> Configuration
+            </button>
+        </t>
+        <div class="o_content flex-grow-1 overflow-y-auto o_standard_view pb-5">
+            <div class="o_container p-3 p-md-4">
+                
+                <div class="mb-3">
+                    <h1 class="fw-bold">Warehouse Monitoring Dashboard</h1>
+                </div>
 
-                <t t-foreach="displayedItems" t-as="item" t-key="item.id">
-                    <Card size="item.size || 1">
-                        <t t-set="itemProps" t-value="item.props ? item.props(statistics.data) : {'data': statistics.data}"/>
-                        <t t-component="item.Component" t-props="itemProps" />
-                    </Card>
-                </t>                
+                <div class="o_renderer d-flex flex-wrap row g-2">
+                    <t t-foreach="displayedItems" t-as="item" t-key="item.id">
+                        <Card size="item.size || 1">
+                            <t t-set="itemProps" t-value="item.props ? item.props(statistics.data) : {'data': statistics.data}"/>
+                            <t t-component="item.Component" t-props="itemProps" />
+                        </Card>
+                    </t>
+                </div>
+
             </div>
-        </Layout>
+        </div>
+    </Layout>
+</t>
+
+
+    <t t-name="warehouse_monitoring.viaew_config_dialog">
+        <Dialog title="'Dashboard Configuration'" size="'sm'">
+            <div class="d-flex flex-column">
+                <t t-foreach="state.items" t-as="item" t-key="item.id">
+                    <div class="mb-2">
+                        <CheckBox 
+                            value="item.is_checked" 
+                            onChange="(val) => item.is_checked = val">
+                            <t t-esc="item.description"/>
+                        </CheckBox>
+                    </div>
+                </t>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="onApply">Apply</button>
+                <button class="btn btn-secondary" t-on-click="props.close">Cancel</button>
+            </t>
+        </Dialog>
     </t>
+
 </templates>

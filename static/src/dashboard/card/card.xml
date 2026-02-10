@@ -1,6 +1,6 @@
 <t t-name="warehouse_monitoring.card">
-    <div class="card d-inline-block m-2 shadow-sm" t-att-style="itemStyle">          
-        <div class="card-body">
+    <div t-attf-class="p-2 #{columnClass}">
+        <div class="h-100 bg-view border rounded shadow-sm p-3">
             <t t-slot="default"/>
         </div>
     </div>

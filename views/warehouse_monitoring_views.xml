@@ -18,18 +18,33 @@
         <field name="arch" type="xml">
             <form string="Warehouse Monitoring Station">
                 <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Station Name (e.g. Cold Storage 1)"/></h1>
+                    </div>
                     <group>
-                        <field name="name"/>
-                        <field name="location_id"/>
+                        <group string="Configuration">
+                            <field name="location_id" options="{'no_create': True}"/>
+                            <field name="ip_address" placeholder="192.168.8.x"/>
+                        </group>
+                        <group string="Current Status">
+                            <field name="current_temperature" readonly="1"/>
+                            <field name="current_humidity" readonly="1"/>
+                            <field name="last_sync" readonly="1"/>
+                        </group>
                     </group>
-                    <group>
-                        <field name="measure_ids">
-                            <list string="Measures">
-                                <field name="value"/>
-                                <field name="measure_unit_id"/>
-                            </list>
-                        </field>
-                    </group>
+                    <notebook>
+                        <page string="Measurement History" name="measures">
+                            <field name="measure_ids" readonly="1">
+                                <list string="Measures" decoration-info="measure_category_id == 'Temperature'" decoration-warning="measure_category_id == 'Humidity'">
+                                    <field name="measurement_date"/>
+                                    <field name="measure_category_id"/>
+                                    <field name="value"/>
+                                    <field name="measure_unit_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -43,6 +58,8 @@
             <list string="Stations">
                 <field name="name"/>
                 <field name="location_id"/>
+                <field name="ip_address"/>
+                <field name="last_sync" widget="datetime"/>
             </list>
         </field>
     </record>

@@ -50,175 +50,175 @@
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">22.1</field>
-            <field name="measurement_date">2026-02-01 08:00:00</field>
+            <field name="measurement_date">2026-02-01 00:00:00</field>
         </record>
         <record id="measure_station1_temp_02" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">22.4</field>
-            <field name="measurement_date">2026-02-01 09:00:00</field>
+            <field name="measurement_date">2026-02-01 04:00:00</field>
         </record>
         <record id="measure_station1_temp_03" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">22.8</field>
-            <field name="measurement_date">2026-02-01 10:00:00</field>
+            <field name="measurement_date">2026-02-01 08:00:00</field>
         </record>
         <record id="measure_station1_temp_04" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">23.0</field>
-            <field name="measurement_date">2026-02-01 11:00:00</field>
+            <field name="measurement_date">2026-02-01 12:00:00</field>
         </record>
         <record id="measure_station1_temp_05" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">23.3</field>
-            <field name="measurement_date">2026-02-01 12:00:00</field>
+            <field name="measurement_date">2026-02-01 16:00:00</field>
         </record>
         <record id="measure_station1_temp_06" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">23.6</field>
-            <field name="measurement_date">2026-02-01 13:00:00</field>
+            <field name="measurement_date">2026-02-01 20:00:00</field>
         </record>
         <record id="measure_station1_temp_07" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">24.0</field>
-            <field name="measurement_date">2026-02-01 14:00:00</field>
+            <field name="measurement_date">2026-02-02 00:00:00</field>
         </record>
         <record id="measure_station1_temp_08" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">24.4</field>
-            <field name="measurement_date">2026-02-01 15:00:00</field>
+            <field name="measurement_date">2026-02-02 04:00:00</field>
         </record>
         <record id="measure_station1_temp_09" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">24.8</field>
-            <field name="measurement_date">2026-02-01 16:00:00</field>
+            <field name="measurement_date">2026-02-02 08:00:00</field>
         </record>
         <record id="measure_station1_temp_10" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">25.1</field>
-            <field name="measurement_date">2026-02-01 17:00:00</field>
+            <field name="measurement_date">2026-02-02 12:00:00</field>
         </record>
         <record id="measure_station1_temp_11" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">25.4</field>
-            <field name="measurement_date">2026-02-01 18:00:00</field>
+            <field name="measurement_date">2026-02-02 16:00:00</field>
         </record>
         <record id="measure_station1_temp_12" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">25.0</field>
-            <field name="measurement_date">2026-02-01 19:00:00</field>
+            <field name="measurement_date">2026-02-02 20:00:00</field>
         </record>
         <record id="measure_station1_temp_13" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">24.6</field>
-            <field name="measurement_date">2026-02-01 20:00:00</field>
+            <field name="measurement_date">2026-02-03 00:00:00</field>
         </record>
         <record id="measure_station1_temp_14" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">24.2</field>
-            <field name="measurement_date">2026-02-01 21:00:00</field>
+            <field name="measurement_date">2026-02-03 04:00:00</field>
         </record>
         <record id="measure_station1_temp_15" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">23.8</field>
-            <field name="measurement_date">2026-02-01 22:00:00</field>
+            <field name="measurement_date">2026-02-03 08:00:00</field>
         </record>
         <record id="measure_station1_temp_16" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">23.4</field>
-            <field name="measurement_date">2026-02-01 23:00:00</field>
+            <field name="measurement_date">2026-02-03 12:00:00</field>
         </record>
         <record id="measure_station1_temp_17" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">23.0</field>
-            <field name="measurement_date">2026-02-02 00:00:00</field>
+            <field name="measurement_date">2026-02-03 16:00:00</field>
         </record>
         <record id="measure_station1_temp_18" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">22.6</field>
-            <field name="measurement_date">2026-02-02 01:00:00</field>
+            <field name="measurement_date">2026-02-03 20:00:00</field>
         </record>
         <record id="measure_station1_temp_19" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">22.3</field>
-            <field name="measurement_date">2026-02-02 02:00:00</field>
+            <field name="measurement_date">2026-02-04 00:00:00</field>
         </record>
         <record id="measure_station1_temp_20" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">22.0</field>
-            <field name="measurement_date">2026-02-02 03:00:00</field>
+            <field name="measurement_date">2026-02-04 04:00:00</field>
         </record>
         <record id="measure_station1_temp_21" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">21.7</field>
-            <field name="measurement_date">2026-02-02 04:00:00</field>
+            <field name="measurement_date">2026-02-04 08:00:00</field>
         </record>
         <record id="measure_station1_temp_22" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">21.4</field>
-            <field name="measurement_date">2026-02-02 05:00:00</field>
+            <field name="measurement_date">2026-02-04 12:00:00</field>
         </record>
         <record id="measure_station1_temp_23" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">21.2</field>
-            <field name="measurement_date">2026-02-02 06:00:00</field>
+            <field name="measurement_date">2026-02-04 16:00:00</field>
         </record>
         <record id="measure_station1_temp_24" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">20.9</field>
-            <field name="measurement_date">2026-02-02 07:00:00</field>
+            <field name="measurement_date">2026-02-04 20:00:00</field>
         </record>
         <record id="measure_station1_temp_25" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">20.6</field>
-            <field name="measurement_date">2026-02-02 08:00:00</field>
+            <field name="measurement_date">2026-02-05 00:00:00</field>
         </record>
 
         <!-- Warehouse Station: Humidity (25) -->
@@ -227,175 +227,175 @@
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">42</field>
-            <field name="measurement_date">2026-02-01 08:30:00</field>
+            <field name="measurement_date">2026-02-01 02:00:00</field>
         </record>
         <record id="measure_station1_hum_02" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">43</field>
-            <field name="measurement_date">2026-02-01 09:30:00</field>
+            <field name="measurement_date">2026-02-01 06:00:00</field>
         </record>
         <record id="measure_station1_hum_03" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">44</field>
-            <field name="measurement_date">2026-02-01 10:30:00</field>
+            <field name="measurement_date">2026-02-01 10:00:00</field>
         </record>
         <record id="measure_station1_hum_04" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">45</field>
-            <field name="measurement_date">2026-02-01 11:30:00</field>
+            <field name="measurement_date">2026-02-01 14:00:00</field>
         </record>
         <record id="measure_station1_hum_05" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">46</field>
-            <field name="measurement_date">2026-02-01 12:30:00</field>
+            <field name="measurement_date">2026-02-01 18:00:00</field>
         </record>
         <record id="measure_station1_hum_06" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">47</field>
-            <field name="measurement_date">2026-02-01 13:30:00</field>
+            <field name="measurement_date">2026-02-01 22:00:00</field>
         </record>
         <record id="measure_station1_hum_07" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">48</field>
-            <field name="measurement_date">2026-02-01 14:30:00</field>
+            <field name="measurement_date">2026-02-02 02:00:00</field>
         </record>
         <record id="measure_station1_hum_08" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">49</field>
-            <field name="measurement_date">2026-02-01 15:30:00</field>
+            <field name="measurement_date">2026-02-02 06:00:00</field>
         </record>
         <record id="measure_station1_hum_09" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">50</field>
-            <field name="measurement_date">2026-02-01 16:30:00</field>
+            <field name="measurement_date">2026-02-02 10:00:00</field>
         </record>
         <record id="measure_station1_hum_10" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">51</field>
-            <field name="measurement_date">2026-02-01 17:30:00</field>
+            <field name="measurement_date">2026-02-02 14:00:00</field>
         </record>
         <record id="measure_station1_hum_11" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">52</field>
-            <field name="measurement_date">2026-02-01 18:30:00</field>
+            <field name="measurement_date">2026-02-02 18:00:00</field>
         </record>
         <record id="measure_station1_hum_12" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">53</field>
-            <field name="measurement_date">2026-02-01 19:30:00</field>
+            <field name="measurement_date">2026-02-02 22:00:00</field>
         </record>
         <record id="measure_station1_hum_13" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">54</field>
-            <field name="measurement_date">2026-02-01 20:30:00</field>
+            <field name="measurement_date">2026-02-03 02:00:00</field>
         </record>
         <record id="measure_station1_hum_14" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">55</field>
-            <field name="measurement_date">2026-02-01 21:30:00</field>
+            <field name="measurement_date">2026-02-03 06:00:00</field>
         </record>
         <record id="measure_station1_hum_15" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">53</field>
-            <field name="measurement_date">2026-02-01 22:30:00</field>
+            <field name="measurement_date">2026-02-03 10:00:00</field>
         </record>
         <record id="measure_station1_hum_16" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">52</field>
-            <field name="measurement_date">2026-02-01 23:30:00</field>
+            <field name="measurement_date">2026-02-03 14:00:00</field>
         </record>
         <record id="measure_station1_hum_17" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">51</field>
-            <field name="measurement_date">2026-02-02 00:30:00</field>
+            <field name="measurement_date">2026-02-03 18:00:00</field>
         </record>
         <record id="measure_station1_hum_18" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">50</field>
-            <field name="measurement_date">2026-02-02 01:30:00</field>
+            <field name="measurement_date">2026-02-03 22:00:00</field>
         </record>
         <record id="measure_station1_hum_19" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">49</field>
-            <field name="measurement_date">2026-02-02 02:30:00</field>
+            <field name="measurement_date">2026-02-04 02:00:00</field>
         </record>
         <record id="measure_station1_hum_20" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">48</field>
-            <field name="measurement_date">2026-02-02 03:30:00</field>
+            <field name="measurement_date">2026-02-04 06:00:00</field>
         </record>
         <record id="measure_station1_hum_21" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">47</field>
-            <field name="measurement_date">2026-02-02 04:30:00</field>
+            <field name="measurement_date">2026-02-04 10:00:00</field>
         </record>
         <record id="measure_station1_hum_22" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">46</field>
-            <field name="measurement_date">2026-02-02 05:30:00</field>
+            <field name="measurement_date">2026-02-04 14:00:00</field>
         </record>
         <record id="measure_station1_hum_23" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">45</field>
-            <field name="measurement_date">2026-02-02 06:30:00</field>
+            <field name="measurement_date">2026-02-04 18:00:00</field>
         </record>
         <record id="measure_station1_hum_24" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">44</field>
-            <field name="measurement_date">2026-02-02 07:30:00</field>
+            <field name="measurement_date">2026-02-04 22:00:00</field>
         </record>
         <record id="measure_station1_hum_25" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_1"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">43</field>
-            <field name="measurement_date">2026-02-02 08:30:00</field>
+            <field name="measurement_date">2026-02-05 02:00:00</field>
         </record>
 
         <!-- Cold Storage Station: Temperature (25) -->
@@ -404,175 +404,175 @@
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">0.5</field>
-            <field name="measurement_date">2026-02-01 09:00:00</field>
+            <field name="measurement_date">2026-02-01 01:00:00</field>
         </record>
         <record id="measure_station2_temp_02" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">0.6</field>
-            <field name="measurement_date">2026-02-01 10:00:00</field>
+            <field name="measurement_date">2026-02-01 05:00:00</field>
         </record>
         <record id="measure_station2_temp_03" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">0.7</field>
-            <field name="measurement_date">2026-02-01 11:00:00</field>
+            <field name="measurement_date">2026-02-01 09:00:00</field>
         </record>
         <record id="measure_station2_temp_04" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">0.8</field>
-            <field name="measurement_date">2026-02-01 12:00:00</field>
+            <field name="measurement_date">2026-02-01 13:00:00</field>
         </record>
         <record id="measure_station2_temp_05" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">0.9</field>
-            <field name="measurement_date">2026-02-01 13:00:00</field>
+            <field name="measurement_date">2026-02-01 17:00:00</field>
         </record>
         <record id="measure_station2_temp_06" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">1.0</field>
-            <field name="measurement_date">2026-02-01 14:00:00</field>
+            <field name="measurement_date">2026-02-01 21:00:00</field>
         </record>
         <record id="measure_station2_temp_07" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">1.1</field>
-            <field name="measurement_date">2026-02-01 15:00:00</field>
+            <field name="measurement_date">2026-02-02 01:00:00</field>
         </record>
         <record id="measure_station2_temp_08" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">1.3</field>
-            <field name="measurement_date">2026-02-01 16:00:00</field>
+            <field name="measurement_date">2026-02-02 05:00:00</field>
         </record>
         <record id="measure_station2_temp_09" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">1.5</field>
-            <field name="measurement_date">2026-02-01 17:00:00</field>
+            <field name="measurement_date">2026-02-02 09:00:00</field>
         </record>
         <record id="measure_station2_temp_10" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">1.7</field>
-            <field name="measurement_date">2026-02-01 18:00:00</field>
+            <field name="measurement_date">2026-02-02 13:00:00</field>
         </record>
         <record id="measure_station2_temp_11" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">1.9</field>
-            <field name="measurement_date">2026-02-01 19:00:00</field>
+            <field name="measurement_date">2026-02-02 17:00:00</field>
         </record>
         <record id="measure_station2_temp_12" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">2.1</field>
-            <field name="measurement_date">2026-02-01 20:00:00</field>
+            <field name="measurement_date">2026-02-02 21:00:00</field>
         </record>
         <record id="measure_station2_temp_13" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">2.3</field>
-            <field name="measurement_date">2026-02-01 21:00:00</field>
+            <field name="measurement_date">2026-02-03 01:00:00</field>
         </record>
         <record id="measure_station2_temp_14" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">2.5</field>
-            <field name="measurement_date">2026-02-01 22:00:00</field>
+            <field name="measurement_date">2026-02-03 05:00:00</field>
         </record>
         <record id="measure_station2_temp_15" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">2.7</field>
-            <field name="measurement_date">2026-02-01 23:00:00</field>
+            <field name="measurement_date">2026-02-03 09:00:00</field>
         </record>
         <record id="measure_station2_temp_16" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">2.9</field>
-            <field name="measurement_date">2026-02-02 00:00:00</field>
+            <field name="measurement_date">2026-02-03 13:00:00</field>
         </record>
         <record id="measure_station2_temp_17" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">3.1</field>
-            <field name="measurement_date">2026-02-02 01:00:00</field>
+            <field name="measurement_date">2026-02-03 17:00:00</field>
         </record>
         <record id="measure_station2_temp_18" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">3.2</field>
-            <field name="measurement_date">2026-02-02 02:00:00</field>
+            <field name="measurement_date">2026-02-03 21:00:00</field>
         </record>
         <record id="measure_station2_temp_19" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">3.3</field>
-            <field name="measurement_date">2026-02-02 03:00:00</field>
+            <field name="measurement_date">2026-02-04 01:00:00</field>
         </record>
         <record id="measure_station2_temp_20" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">3.4</field>
-            <field name="measurement_date">2026-02-02 04:00:00</field>
+            <field name="measurement_date">2026-02-04 05:00:00</field>
         </record>
         <record id="measure_station2_temp_21" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">3.6</field>
-            <field name="measurement_date">2026-02-02 05:00:00</field>
+            <field name="measurement_date">2026-02-04 09:00:00</field>
         </record>
         <record id="measure_station2_temp_22" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">3.7</field>
-            <field name="measurement_date">2026-02-02 06:00:00</field>
+            <field name="measurement_date">2026-02-04 13:00:00</field>
         </record>
         <record id="measure_station2_temp_23" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">3.8</field>
-            <field name="measurement_date">2026-02-02 07:00:00</field>
+            <field name="measurement_date">2026-02-04 17:00:00</field>
         </record>
         <record id="measure_station2_temp_24" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">3.9</field>
-            <field name="measurement_date">2026-02-02 08:00:00</field>
+            <field name="measurement_date">2026-02-04 21:00:00</field>
         </record>
         <record id="measure_station2_temp_25" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_temperature"/>
             <field name="measure_unit_id" ref="measure_unit_degree"/>
             <field name="value">4.0</field>
-            <field name="measurement_date">2026-02-02 09:00:00</field>
+            <field name="measurement_date">2026-02-05 01:00:00</field>
         </record>
 
         <!-- Cold Storage Station: Humidity (25) -->
@@ -581,175 +581,175 @@
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">78</field>
-            <field name="measurement_date">2026-02-01 09:30:00</field>
+            <field name="measurement_date">2026-02-01 03:00:00</field>
         </record>
         <record id="measure_station2_hum_02" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">79</field>
-            <field name="measurement_date">2026-02-01 10:30:00</field>
+            <field name="measurement_date">2026-02-01 07:00:00</field>
         </record>
         <record id="measure_station2_hum_03" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">80</field>
-            <field name="measurement_date">2026-02-01 11:30:00</field>
+            <field name="measurement_date">2026-02-01 11:00:00</field>
         </record>
         <record id="measure_station2_hum_04" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">81</field>
-            <field name="measurement_date">2026-02-01 12:30:00</field>
+            <field name="measurement_date">2026-02-01 15:00:00</field>
         </record>
         <record id="measure_station2_hum_05" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">82</field>
-            <field name="measurement_date">2026-02-01 13:30:00</field>
+            <field name="measurement_date">2026-02-01 19:00:00</field>
         </record>
         <record id="measure_station2_hum_06" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">83</field>
-            <field name="measurement_date">2026-02-01 14:30:00</field>
+            <field name="measurement_date">2026-02-01 23:00:00</field>
         </record>
         <record id="measure_station2_hum_07" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">84</field>
-            <field name="measurement_date">2026-02-01 15:30:00</field>
+            <field name="measurement_date">2026-02-02 03:00:00</field>
         </record>
         <record id="measure_station2_hum_08" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">85</field>
-            <field name="measurement_date">2026-02-01 16:30:00</field>
+            <field name="measurement_date">2026-02-02 07:00:00</field>
         </record>
         <record id="measure_station2_hum_09" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">86</field>
-            <field name="measurement_date">2026-02-01 17:30:00</field>
+            <field name="measurement_date">2026-02-02 11:00:00</field>
         </record>
         <record id="measure_station2_hum_10" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">87</field>
-            <field name="measurement_date">2026-02-01 18:30:00</field>
+            <field name="measurement_date">2026-02-02 15:00:00</field>
         </record>
         <record id="measure_station2_hum_11" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">88</field>
-            <field name="measurement_date">2026-02-01 19:30:00</field>
+            <field name="measurement_date">2026-02-02 19:00:00</field>
         </record>
         <record id="measure_station2_hum_12" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">89</field>
-            <field name="measurement_date">2026-02-01 20:30:00</field>
+            <field name="measurement_date">2026-02-02 23:00:00</field>
         </record>
         <record id="measure_station2_hum_13" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">90</field>
-            <field name="measurement_date">2026-02-01 21:30:00</field>
+            <field name="measurement_date">2026-02-03 03:00:00</field>
         </record>
         <record id="measure_station2_hum_14" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">91</field>
-            <field name="measurement_date">2026-02-01 22:30:00</field>
+            <field name="measurement_date">2026-02-03 07:00:00</field>
         </record>
         <record id="measure_station2_hum_15" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">92</field>
-            <field name="measurement_date">2026-02-01 23:30:00</field>
+            <field name="measurement_date">2026-02-03 11:00:00</field>
         </record>
         <record id="measure_station2_hum_16" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">90</field>
-            <field name="measurement_date">2026-02-02 00:30:00</field>
+            <field name="measurement_date">2026-02-03 15:00:00</field>
         </record>
         <record id="measure_station2_hum_17" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">88</field>
-            <field name="measurement_date">2026-02-02 01:30:00</field>
+            <field name="measurement_date">2026-02-03 19:00:00</field>
         </record>
         <record id="measure_station2_hum_18" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">87</field>
-            <field name="measurement_date">2026-02-02 02:30:00</field>
+            <field name="measurement_date">2026-02-03 23:00:00</field>
         </record>
         <record id="measure_station2_hum_19" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">86</field>
-            <field name="measurement_date">2026-02-02 03:30:00</field>
+            <field name="measurement_date">2026-02-04 03:00:00</field>
         </record>
         <record id="measure_station2_hum_20" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">85</field>
-            <field name="measurement_date">2026-02-02 04:30:00</field>
+            <field name="measurement_date">2026-02-04 07:00:00</field>
         </record>
         <record id="measure_station2_hum_21" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">84</field>
-            <field name="measurement_date">2026-02-02 05:30:00</field>
+            <field name="measurement_date">2026-02-04 11:00:00</field>
         </record>
         <record id="measure_station2_hum_22" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">83</field>
-            <field name="measurement_date">2026-02-02 06:30:00</field>
+            <field name="measurement_date">2026-02-04 15:00:00</field>
         </record>
         <record id="measure_station2_hum_23" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">82</field>
-            <field name="measurement_date">2026-02-02 07:30:00</field>
+            <field name="measurement_date">2026-02-04 19:00:00</field>
         </record>
         <record id="measure_station2_hum_24" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">81</field>
-            <field name="measurement_date">2026-02-02 08:30:00</field>
+            <field name="measurement_date">2026-02-04 23:00:00</field>
         </record>
         <record id="measure_station2_hum_25" model="warehouse_monitoring.measure">
             <field name="station_id" ref="station_2"/>
             <field name="measure_category_id" ref="measure_category_humidity"/>
             <field name="measure_unit_id" ref="measure_unit_relative_humidity"/>
             <field name="value">80</field>
-            <field name="measurement_date">2026-02-02 09:30:00</field>
+            <field name="measurement_date">2026-02-05 03:00:00</field>
         </record>
     </data>
 </odoo>

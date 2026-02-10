@@ -1,0 +1,17 @@
+/* Only essential structural CSS */
+.wm_chart_box {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+}
+
+/* Optional: Subtle polish for the buttons to match your previous shadow/hover */
+.btn-light.rounded-pill {
+    font-size: 0.875rem;
+    transition: all 0.15s ease;
+}
+
+.btn-light.rounded-pill:hover {
+    border-color: var(--o-brand-primary) !important;
+    background-color: white;
+}

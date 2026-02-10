@@ -6,3 +6,4 @@ warehouse_monitoring.access_warehouse_monitoring_location_manager,Warehouse Loca
 warehouse_monitoring.access_warehouse_monitoring_measure,Warehouse Measure - User,warehouse_monitoring.model_warehouse_monitoring_measure,base.group_user,1,1,1,1
 warehouse_monitoring.access_warehouse_monitoring_measure_unit,Warehouse Measure Unit - User,warehouse_monitoring.model_warehouse_monitoring_measure_unit,base.group_user,1,1,1,1
 warehouse_monitoring.access_warehouse_monitoring_measure_category,Warehouse Measure Category - User,warehouse_monitoring.model_warehouse_monitoring_measure_category,base.group_user,1,1,1,1
+warehouse_monitoring.access_warehouse_monitoring_station,Warehouse Station - User,model_warehouse_monitoring_station,base.group_user,1,1,1,1

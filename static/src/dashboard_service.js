@@ -3,18 +3,24 @@ import { registry } from "@web/core/registry";
 import { rpc as jsonrpc } from "@web/core/network/rpc";
 
 const statisticsService = {
-    dependencies: [], // No dependencies to avoid startup delays
+    dependencies: [],
     start(env) {
-        // 1. Create the reactive state
+        // Default hardcoded values for station id and time range
+        // TODO refactor
         const stats = reactive({
             data: {},
-            isLoaded: false
+            isLoaded: false,
+            filters: {
+                station_id: 1,
+                days: 3,
+            },
+            reload: async () => {},
         });
 
-        // 2. Define the reload logic
-        async function loadStatistics() {
+        async function loadStatistics(overrides = {}) {
             try {
-                const result = await jsonrpc("/stats");
+                stats.filters = { ...stats.filters, ...overrides };
+                const result = await jsonrpc("/stats", stats.filters);
                 stats.data = result
                 stats.isLoaded = true;
                 console.log("Statistics service updated data.");
@@ -23,9 +29,11 @@ const statisticsService = {
             }
         }
 
-        // 3. Initial load and periodic refresh (10s for testing)
+        stats.reload = loadStatistics;
+
+        // 3. Initial load and every hour periodic refresh
         loadStatistics();
-        setInterval(loadStatistics, 600000);
+        setInterval(loadStatistics, 3600000);
 
         // 4. Return the reactive object
         return stats;
