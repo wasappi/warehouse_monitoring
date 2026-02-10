@@ -1,41 +1,6 @@
 <templates xml:space="preserve">
     <t t-name="warehouse_monitoring.graph_card">
         <div class="d-flex flex-column gap-3">
-            <div class="d-flex align-items-center justify-content-between">
-                <div class="d-flex gap-2">
-                    <Dropdown>
-                        <button class="btn btn-light border rounded-pill fw-bold sm" type="button">
-                            <t t-esc="currentStation.name"/>
-                            <i class="fa fa-chevron-down ms-2 small opacity-75"/>
-                        </button>
-                        <t t-set-slot="content">
-                            <DropdownItem class="dropdown-item" onSelected="() => selectStation({ id: null, name: 'All Stations' })">
-                                All Stations
-                            </DropdownItem>
-                            <t t-foreach="stations.data" t-as="station" t-key="station.id">
-                                <DropdownItem class="dropdown-item" onSelected="() => selectStation(station)">
-                                    <t t-esc="station.name"/>
-                                </DropdownItem>
-                            </t>
-                        </t>
-                    </Dropdown>
-
-                    <Dropdown>
-                        <button class="btn btn-light border rounded-pill fw-bold sm" type="button">
-                            <t t-esc="currentPeriod.label"/>
-                            <i class="fa fa-chevron-down ms-2 small opacity-75"/>
-                        </button>
-                        <t t-set-slot="content">
-                            <t t-foreach="periods" t-as="period" t-key="period.days">
-                                <DropdownItem class="dropdown-item" onSelected="() => selectPeriod(period)">
-                                    <t t-esc="period.label"/>
-                                </DropdownItem>
-                            </t>
-                        </t>
-                    </Dropdown>
-                </div>
-            </div>
-
             <div class="wm_chart_box border rounded bg-view p-2">
                 <canvas t-ref="canvas"></canvas>
             </div>

@@ -1,13 +1,8 @@
-import { Component, onWillStart, useRef, onMounted, useEffect, useState } from "@odoo/owl";
+import { Component, onWillStart, useRef, onMounted, useEffect } from "@odoo/owl";
 import { loadJS } from "@web/core/assets";
-import { Dropdown} from "@web/core/dropdown/dropdown"
-import { DropdownItem} from "@web/core/dropdown/dropdown_item"
-import { useService } from "@web/core/utils/hooks";
-
 
 export class GraphCard extends Component {
     static template = "warehouse_monitoring.graph_card";
-    static components = { Dropdown, DropdownItem };
     static props = {
         data: { type: Object }, // Expecting: { labels: [], temp: [], humid: [] }
         label: { type: String, optional: true },
@@ -28,47 +23,6 @@ export class GraphCard extends Component {
 
         onMounted(() => {
             this.renderChart();
-        });
-
-
-        //-----------Should be refactored, ranges options fetch from Server instead 
-        this.orm = useService("orm");
-        this.statistics = useService("warehouse_monitoring.statistics");
-        this.stations = useState({ data: [] });
-        this.currentStation = useState({ id: 1, name: "Warehouse Station" });
-        this.currentPeriod = useState({ label: "Last 3 days", days: 3 });
-        this.periods = [
-            { label: "Last 24h", days: 1 },
-            { label: "Last 72h", days: 3 },
-            { label: "Last 7 days", days: 7 },
-        ];
-        //-----------
-        this.selectStation = this.selectStation.bind(this);
-        this.selectPeriod = this.selectPeriod.bind(this);
-
-        onWillStart(async () => {
-            this.stations.data = await this.orm.searchRead(
-                "warehouse_monitoring.station",
-                [],
-                ["name"]
-            );
-        });
-    }
-    selectStation(station) {
-        this.currentStation.id = station.id;
-        this.currentStation.name = station.name;
-        this.statistics.reload({
-            station_id: station.id,
-            days: this.currentPeriod.days,
-        });
-    }
-
-    selectPeriod(period) {
-        this.currentPeriod.label = period.label;
-        this.currentPeriod.days = period.days;
-        this.statistics.reload({
-            station_id: this.currentStation.id,
-            days: period.days,
         });
     }
     renderChart() {
