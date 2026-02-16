@@ -3,13 +3,24 @@
 		<div class="d-flex flex-column gap-2">
 			<h5 t-if="props.title" t-esc="props.title"/>
 			<div class="border rounded bg-view overflow-hidden">
-				<iframe
-					t-att-src="props.url"
-					t-att-title="props.title || 'Media Stream'"
-					t-att-style="'width:100%;height:' + (props.height || '360px') + ';border:0;'"
-					allow="autoplay; fullscreen; picture-in-picture"
-					loading="lazy"
-				/>
+				<t t-if="state.isPlaying">
+					<div class="position-relative">
+						<button class="btn btn-sm btn-outline-light position-absolute top-0 end-0 m-2" t-on-click="onStop">Stop</button>
+						<iframe
+							t-att-src="props.url"
+							t-att-title="props.title || 'Media Stream'"
+							t-att-style="'width:100%;height:' + (props.height || '360px') + ';border:0;'"
+							allow="fullscreen; picture-in-picture"
+							loading="lazy"
+						/>
+					</div>
+				</t>
+				<t t-else="">
+					<div class="d-flex flex-column align-items-center justify-content-center bg-light" t-att-style="'height:' + (props.height || '360px')">
+						<button class="btn btn-primary" t-on-click="onPlay">Play stream</button>
+						<div class="small text-body-secondary mt-2">Click to start playback</div>
+					</div>
+				</t>
 			</div>
 		</div>
 	</t>
