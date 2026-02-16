@@ -44,13 +44,35 @@
                     </div>
                 </div>
 
-                <div class="o_renderer d-flex flex-wrap row g-2">
-                    <t t-foreach="displayedItems" t-as="item" t-key="item.id">
-                        <Card size="item.size || 1">
-                            <t t-set="itemProps" t-value="item.props ? item.props(statistics.data) : {'data': statistics.data}"/>
-                            <t t-component="item.Component" t-props="itemProps" />
-                        </Card>
-                    </t>
+                <div class="o_renderer">
+                    <div class="row g-2">
+                        <div class="col-12 col-lg-6">
+                            <div class="row g-2">
+                                <t t-foreach="valueItems" t-as="item" t-key="item.id">
+                                    <Card className="'col-6'">
+                                        <t t-set="itemProps" t-value="item.props ? item.props(statistics.data) : {'data': statistics.data}"/>
+                                        <t t-component="item.Component" t-props="itemProps" />
+                                    </Card>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <t t-if="mediaItem">
+                                <Card className="'col-12'">
+                                    <t t-set="itemProps" t-value="mediaItem.props ? mediaItem.props(statistics.data) : {'data': statistics.data}"/>
+                                    <t t-component="mediaItem.Component" t-props="itemProps" />
+                                </Card>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="row g-2 mt-1">
+                        <t t-if="graphItem">
+                            <Card className="'col-12'">
+                                <t t-set="itemProps" t-value="graphItem.props ? graphItem.props(statistics.data) : {'data': statistics.data}"/>
+                                <t t-component="graphItem.Component" t-props="itemProps" />
+                            </Card>
+                        </t>
+                    </div>
                 </div>
 
             </div>

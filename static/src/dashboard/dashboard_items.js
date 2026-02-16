@@ -1,5 +1,6 @@
 import { registry } from "@web/core/registry";
 import { ValueCard } from "./value_card/value_card";
+import { MediaCard } from "./media_card/media_card";
 import { GraphCard } from "./graph_card/graph_card";
 
 const dashboardRegistry = registry.category("warehouse_monitoring");
@@ -14,7 +15,9 @@ dashboardRegistry.add("latest_temp", {
     props: (stats) => ({
         title: "Current temperature",
         value: stats.latest_temp ? stats.latest_temp.value : "—",
-        unit: stats.latest_temp ? stats.latest_temp.unit : ""
+        unit: stats.latest_temp ? stats.latest_temp.unit : "",
+        date: stats.latest_temp ? stats.latest_temp.date : null,
+        icon: "fa fa-thermometer-half",
     }),
 });
 
@@ -26,7 +29,9 @@ dashboardRegistry.add("latest_hum", {
     props: (stats) => ({
         title: "Current humidity",
         value: stats.latest_hum ? stats.latest_hum.value : "—",
-        unit: stats.latest_hum ? stats.latest_hum.unit : ""
+        unit: stats.latest_hum ? stats.latest_hum.unit : "",
+        date: stats.latest_hum ? stats.latest_hum.date : null,
+        icon: "fa fa-tint",
     }),
 });
 
@@ -42,6 +47,7 @@ dashboardRegistry.add("temp_delta", {
             title: "Temperature Variation",
             value: tempDeltaValue ?? "—",
             unit: tempDelta?.unit ?? "",
+            icon: "fa fa-arrows-v",
             className: typeof tempDeltaValue === "number" && tempDeltaValue > 5 ? "text-warning fw-bold" : "",
         };
     },
@@ -58,11 +64,24 @@ dashboardRegistry.add("safety_margin", {
             title: "Current Condensation Margin",
             value: safetyMargin?.value ?? "—",
             unit: safetyMargin?.unit ?? "",
+            icon: "fa fa-cloud",
             className: safetyMargin?.is_danger ? "text-danger fw-bold" : "",
         };
     },
 });
 
+
+dashboardRegistry.add("live_stream", {
+    id: "live_stream",
+    description: "Live video stream feed",
+    Component: MediaCard,
+    size: 12,
+    props: () => ({
+        title: "Live Camera Feed",
+        url: "http://192.168.8.148:8888/cam/",
+        height: "252px",
+    }),
+});
 
 // Graphcard
 dashboardRegistry.add("temp_humid_trend", {

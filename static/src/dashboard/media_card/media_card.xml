@@ -1,0 +1,16 @@
+<templates xml:space="preserve">
+	<t t-name="warehouse_monitoring.media_card">
+		<div class="d-flex flex-column gap-2">
+			<h5 t-if="props.title" t-esc="props.title"/>
+			<div class="border rounded bg-view overflow-hidden">
+				<iframe
+					t-att-src="props.url"
+					t-att-title="props.title || 'Media Stream'"
+					t-att-style="'width:100%;height:' + (props.height || '360px') + ';border:0;'"
+					allow="autoplay; fullscreen; picture-in-picture"
+					loading="lazy"
+				/>
+			</div>
+		</div>
+	</t>
+</templates>

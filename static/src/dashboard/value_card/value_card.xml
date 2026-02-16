@@ -1,9 +1,13 @@
 <t t-name="warehouse_monitoring.value_card">
-    <div class="text-center">
-        <h5 t-esc="props.title"/>
-        <h2 class="text-primary">
-            <t t-esc="props.value"/>
-            <span class="text-body-secondary fw-semibold fs-6 ms-1" t-esc="props.unit"/>
-        </h2>
+    <div class="d-flex flex-column align-items-center justify-content-center h-100 text-center gap-2">
+        <i t-if="props.icon" t-attf-class="#{props.icon} text-body-secondary fs-4 mb-1"/>
+        <h5 class="mb-2" t-esc="props.title"/>
+        <div class="px-3 py-1 rounded-pill bg-light mb-2">
+            <h2 t-attf-class="text-primary mb-0 #{props.className || ''}">
+                <t t-esc="props.value"/>
+                <span class="text-body-secondary fw-semibold fs-6 ms-1" t-esc="props.unit"/>
+            </h2>
+        </div>
+        <span t-if="props.date" class="small text-body-secondary opacity-75" t-esc="props.date"/>
     </div>
 </t>

@@ -36,6 +36,23 @@ class WarehouseMonitoringController(http.Controller):
 
         latest_temp = temp_recs[-1] if temp_recs else None
         latest_hum = hum_recs[-1] if hum_recs else None
+
+        def format_since(measure_dt):
+            if not measure_dt:
+                return None
+            now_user = fields.Datetime.context_timestamp(request.env.user, now_utc)
+            measure_user = fields.Datetime.context_timestamp(request.env.user, measure_dt)
+            delta_seconds = int((now_user - measure_user).total_seconds())
+            if delta_seconds <= 60:
+                return "just now"
+            minutes = delta_seconds // 60
+            if minutes < 60:
+                return f"{minutes} minute{'s' if minutes != 1 else ''} ago"
+            hours = minutes // 60
+            if hours < 24:
+                return f"{hours} hour{'s' if hours != 1 else ''} ago"
+            days = hours // 24
+            return f"{days} day{'s' if days != 1 else ''} ago"
         
         # Temperature Delta
         temp_values = temp_recs.mapped('value')
@@ -51,11 +68,13 @@ class WarehouseMonitoringController(http.Controller):
         return {
             "latest_temp": {
                 "value": latest_temp.value if latest_temp else 0,
-                "unit": latest_temp.measure_unit_id.symbol if latest_temp else "°C"
+                "unit": latest_temp.measure_unit_id.symbol if latest_temp else "°C",
+                "date": format_since(latest_temp.measurement_date) if latest_temp else None,
             },
             "latest_hum": {
                 "value": latest_hum.value if latest_hum else 0,
-                "unit": latest_hum.measure_unit_id.symbol if latest_hum else "%"
+                "unit": latest_hum.measure_unit_id.symbol if latest_hum else "%",
+                "date": format_since(latest_hum.measurement_date) if latest_hum else None,
             },
             "temp_delta": {
                 "value": round(temp_delta, 1),

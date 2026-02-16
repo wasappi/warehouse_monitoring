@@ -66,6 +66,21 @@ export class WarehouseMonitoringDashboard extends Component {
         return this.items;
         //return this.items.filter(item => !this.state.disabledItems.includes(item.id));
     }
+
+    get valueItems() {
+        const valueIds = ["latest_temp", "latest_hum", "temp_delta", "safety_margin"];
+        return valueIds
+            .map((id) => this.items.find((item) => item.id === id))
+            .filter(Boolean);
+    }
+
+    get mediaItem() {
+        return this.items.find((item) => item.id === "live_stream");
+    }
+
+    get graphItem() {
+        return this.items.find((item) => item.id === "temp_humid_trend");
+    }
 }
 
 registry.category("lazy_components").add("WarehouseMonitoringDashboard", WarehouseMonitoringDashboard);
