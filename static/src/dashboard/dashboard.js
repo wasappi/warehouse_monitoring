@@ -20,7 +20,7 @@ export class WarehouseMonitoringDashboard extends Component {
 
         this.stations = useState({ data: [] });
         this.currentStation = useState({ id: 1, name: "Warehouse Station" });
-        this.currentPeriod = useState({ label: "Last 3 days", days: 3 });
+        this.currentPeriod = useState({ label: "Last 24h", days: 1 });
         this.periods = [
             { label: "Last 24h", days: 1 },
             { label: "Last 72h", days: 3 },

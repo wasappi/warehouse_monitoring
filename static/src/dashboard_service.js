@@ -12,7 +12,7 @@ const statisticsService = {
             isLoaded: false,
             filters: {
                 station_id: 1,
-                days: 3,
+                days: 1,
             },
             reload: async () => {},
         });

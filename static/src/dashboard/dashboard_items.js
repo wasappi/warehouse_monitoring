@@ -79,7 +79,7 @@ dashboardRegistry.add("live_stream", {
     props: () => ({
         title: "Live Camera Feed",
         url: "https://cam1.darkmode.sh",
-        height: "252px",
+        height: "258px",
     }),
 });
 
