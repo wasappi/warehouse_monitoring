@@ -8,6 +8,5 @@
                 <span class="text-body-secondary fw-semibold fs-6 ms-1" t-esc="props.unit"/>
             </h2>
         </div>
-        <span t-if="props.date" class="small text-body-secondary opacity-75" t-esc="props.date"/>
     </div>
 </t>

@@ -1,6 +1,10 @@
+import logging
+import requests
 from odoo import http, fields
 from odoo.http import request
 from datetime import timedelta
+
+_logger = logging.getLogger(__name__)
 
 class WarehouseMonitoringController(http.Controller):
     @http.route('/stats', type='jsonrpc', auth='user')
@@ -8,6 +12,9 @@ class WarehouseMonitoringController(http.Controller):
         base_domain = []
         if station_id:
             base_domain.append(('station_id', '=', int(station_id)))
+
+        station = request.env['warehouse_monitoring.station'].browse(int(station_id)) if station_id else None
+        camera_url = station.camera_url if station and station.exists() else None
 
         now_utc = fields.Datetime.now()
 
@@ -33,9 +40,13 @@ class WarehouseMonitoringController(http.Controller):
         # Split into temp and humidity lists for calculations
         temp_recs = all_rec.filtered(lambda r: r.measure_category_id.category == 'temp')
         hum_recs = all_rec.filtered(lambda r: r.measure_category_id.category == 'hum')
+        press_recs = all_rec.filtered(lambda r: r.measure_category_id.category == 'press')
+        co2_recs = all_rec.filtered(lambda r: r.measure_category_id.category in ('co2', 'gas'))
 
         latest_temp = temp_recs[-1] if temp_recs else None
         latest_hum = hum_recs[-1] if hum_recs else None
+        latest_press = press_recs[-1] if press_recs else None
+        latest_co2 = co2_recs[-1] if co2_recs else None
 
         def format_since(measure_dt):
             if not measure_dt:
@@ -66,6 +77,7 @@ class WarehouseMonitoringController(http.Controller):
             safety_margin = latest_temp.value - dew_point
 
         return {
+            "camera_url": camera_url,
             "latest_temp": {
                 "value": latest_temp.value if latest_temp else 0,
                 "unit": latest_temp.measure_unit_id.symbol if latest_temp else "°C",
@@ -75,6 +87,16 @@ class WarehouseMonitoringController(http.Controller):
                 "value": latest_hum.value if latest_hum else 0,
                 "unit": latest_hum.measure_unit_id.symbol if latest_hum else "%",
                 "date": format_since(latest_hum.measurement_date) if latest_hum else None,
+            },
+            "latest_press": {
+                "value": latest_press.value if latest_press else 0,
+                "unit": latest_press.measure_unit_id.symbol if latest_press else "hPa",
+                "date": format_since(latest_press.measurement_date) if latest_press else None,
+            },
+            "latest_co2": {
+                "value": latest_co2.value if latest_co2 else 0,
+                "unit": latest_co2.measure_unit_id.symbol if latest_co2 else "ppm",
+                "date": format_since(latest_co2.measurement_date) if latest_co2 else None,
             },
             "temp_delta": {
                 "value": round(temp_delta, 1),
@@ -89,5 +111,29 @@ class WarehouseMonitoringController(http.Controller):
                 "labels": all_rec.mapped(lambda m: m.measurement_date.strftime("%m/%d %H:%M") if m.measurement_date else ""),
                 "temp": [m.value if m.measure_category_id.category == 'temp' else None for m in all_rec],
                 "humid": [m.value if m.measure_category_id.category == 'hum' else None for m in all_rec],
+                "press": [m.value if m.measure_category_id.category == 'press' else None for m in all_rec],
+                "co2": [m.value if m.measure_category_id.category in ('co2', 'gas') else None for m in all_rec],
             }
         }
+
+    @http.route('/trigger_light', type='jsonrpc', auth='user')
+    def trigger_light(self, station_id=None, on=0):
+        if not station_id:
+            return {"ok": False, "error": "missing_station"}
+
+        station = request.env['warehouse_monitoring.station'].browse(int(station_id))
+        if not station.exists():
+            return {"ok": False, "error": "unknown_station"}
+
+        if not station.ip_address:
+            return {"ok": False, "error": "missing_station_ip"}
+
+        try:
+            url = f"http://{station.ip_address}/light"
+            params = {"on": 1 if int(on) else 0}
+            response = requests.get(url, params=params, timeout=5)
+            response.raise_for_status()
+            return {"ok": True}
+        except Exception as exc:
+            _logger.error("Light trigger failed for station %s: %s", station.name, exc)
+            return {"ok": False, "error": str(exc)}

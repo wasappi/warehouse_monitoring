@@ -9,5 +9,8 @@ class MeasureCategory(models.Model):
     category = fields.Selection([
         ('temp', 'Temperature'),
         ('hum', 'Humidity'),
+        ('press', 'Pressure'),
+        ('gas', 'Gas'),
+        ('co2', 'CO2'),
         ('other', 'Other')
     ], required=True)

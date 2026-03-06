@@ -4,11 +4,16 @@ import { Layout } from "@web/search/layout";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useService } from "@web/core/utils/hooks";
+import { rpc as jsonrpc } from "@web/core/network/rpc";
 import { Card } from "./card/card";
 
 
 export class WarehouseMonitoringDashboard extends Component {
-    static template = "warehouse_monitoring.dashboard"
+    static template = "warehouse_monitoring.dashboard";
+    static props = {
+        action: { type: Object, optional: true },
+        actionId: { type: Number, optional: true },
+    };
     static components = { Layout, Card, Dropdown, DropdownItem };
 
     setup() {
@@ -19,7 +24,8 @@ export class WarehouseMonitoringDashboard extends Component {
         this.items = itemsRegistry.getAll();
 
         this.stations = useState({ data: [] });
-        this.currentStation = useState({ id: 1, name: "Warehouse Station" });
+        this.currentStation = useState({ id: 1, name: "Warehouse Station", ip_address: null });
+        this.light = useState({ isOn: false, isBusy: false });
         this.currentPeriod = useState({ label: "Last 24h", days: 1 });
         this.periods = [
             { label: "Last 24h", days: 1 },
@@ -29,13 +35,18 @@ export class WarehouseMonitoringDashboard extends Component {
 
         this.selectStation = this.selectStation.bind(this);
         this.selectPeriod = this.selectPeriod.bind(this);
+        this.onToggleLight = this.onToggleLight.bind(this);
 
         onWillStart(async () => {
             this.stations.data = await this.orm.searchRead(
                 "warehouse_monitoring.station",
                 [],
-                ["name"]
+                ["name", "ip_address"]
             );
+            if (!this.currentStation.ip_address && this.stations.data.length) {
+                const defaultStation = this.stations.data.find((s) => s.ip_address) || this.stations.data[0];
+                this.selectStation(defaultStation);
+            }
         });
     }
 
@@ -46,10 +57,37 @@ export class WarehouseMonitoringDashboard extends Component {
     selectStation(station) {
         this.currentStation.id = station.id;
         this.currentStation.name = station.name;
+        this.currentStation.ip_address = station.ip_address || null;
         this.statistics.reload({
             station_id: station.id,
             days: this.currentPeriod.days,
         });
+    }
+
+    async onToggleLight(ev) {
+        if (!this.currentStation.id || !this.currentStation.ip_address || this.light.isBusy) {
+            ev.preventDefault();
+            return;
+        }
+
+        const nextState = ev.target.checked;
+        this.light.isOn = nextState;
+        this.light.isBusy = true;
+
+        try {
+            const result = await jsonrpc("/trigger_light", {
+                station_id: this.currentStation.id,
+                on: nextState ? 1 : 0,
+            });
+            if (!result?.ok) {
+                throw new Error(result?.error || "Light toggle failed");
+            }
+        } catch (error) {
+            console.error("Light toggle failed", error);
+            this.light.isOn = !nextState;
+        } finally {
+            this.light.isBusy = false;
+        }
     }
 
     selectPeriod(period) {
@@ -68,7 +106,14 @@ export class WarehouseMonitoringDashboard extends Component {
     }
 
     get valueItems() {
-        const valueIds = ["latest_temp", "latest_hum", "temp_delta", "safety_margin"];
+        const valueIds = [
+            "latest_temp",
+            "latest_hum",
+            "latest_press",
+            "latest_co2",
+            "temp_delta",
+            "safety_margin",
+        ];
         return valueIds
             .map((id) => this.items.find((item) => item.id === id))
             .filter(Boolean);

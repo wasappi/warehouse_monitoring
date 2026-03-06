@@ -14,11 +14,14 @@ class WarehouseMonitoringStation(models.Model):
     measure_ids = fields.One2many("warehouse_monitoring.measure", "station_id")
 
     ip_address = fields.Char(string="ESP32 IP Address", help="Tailscale/Local IP")
+    camera_url = fields.Char(string="Camera URL", help="Stream URL (http/https)")
     last_sync = fields.Datetime(string="Last Successful Sync", readonly=True)
     
     # Store current values on the station for quick dashboard access
     current_temperature = fields.Float(string="Current Temp", readonly=True)
     current_humidity = fields.Float(string="Current Humidity", readonly=True)
+    current_pressure = fields.Float(string="Current Pressure", readonly=True)
+    current_co2_ppm = fields.Float(string="Current CO2 (ppm)", readonly=True)
 
     def scheduled_fetch_all(self):
         """Called by the Cron (Scheduled Action)"""
@@ -36,8 +39,10 @@ class WarehouseMonitoringStation(models.Model):
                 data = r.json()
 
                 metrics = [
-                    {'key': 'temperature', 'cat_code': 'temp', 'unit_sym': '°C'},
-                    {'key': 'humidity', 'cat_code': 'hum', 'unit_sym': '%'}
+                    {'key': 'temp', 'cat_code': 'temp', 'unit_sym': '°C'},
+                    {'key': 'hum', 'cat_code': 'hum', 'unit_sym': '%'},
+                    {'key': 'press_hpa', 'cat_code': 'press', 'unit_sym': 'hPa'},
+                    {'key': 'co2_ppm', 'cat_code': 'co2', 'unit_sym': 'ppm'},
                 ]
 
                 for metric in metrics:
@@ -64,8 +69,10 @@ class WarehouseMonitoringStation(models.Model):
 
                 # Update the station summary fields
                 self.write({
-                    'current_temperature': data.get('temperature'),
-                    'current_humidity': data.get('humidity'),
+                    'current_temperature': data.get('temp'),
+                    'current_humidity': data.get('hum'),
+                    'current_pressure': data.get('press_hpa'),
+                    'current_co2_ppm': data.get('co2_ppm'),
                     'last_sync': fields.Datetime.now(),
                 })
 

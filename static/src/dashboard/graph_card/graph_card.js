@@ -4,7 +4,7 @@ import { loadJS } from "@web/core/assets";
 export class GraphCard extends Component {
     static template = "warehouse_monitoring.graph_card";
     static props = {
-        data: { type: Object }, // Expecting: { labels: [], temp: [], humid: [] }
+        data: { type: Object }, // Expecting: { labels: [], temp: [], humid: [], press: [], co2: [] }
         label: { type: String, optional: true },
     };
 
@@ -30,7 +30,7 @@ export class GraphCard extends Component {
             this.chart.destroy();
         }
 
-        const { labels = [], temp = [], humid = [] } = this.props.data || {};
+        const { labels = [], temp = [], humid = [], press = [], co2 = [] } = this.props.data || {};
 
         if (!this.canvasRef.el || labels.length === 0) {
             return;
@@ -62,7 +62,32 @@ export class GraphCard extends Component {
                         borderWidth: 1,
                         yAxisID: 'y-humid',
                         spanGaps: true,
-                    }
+                    },
+                    {
+                        type: 'line',
+                        label: 'Pressure (hPa)',
+                        data: press,
+                        borderColor: '#4caf50',
+                        backgroundColor: 'transparent',
+                        yAxisID: 'y-press',
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointRadius: 2,
+                        spanGaps: true,
+                    },
+                    {
+                        type: 'line',
+                        label: 'CO2 (ppm)',
+                        data: co2,
+                        borderColor: '#ff9800',
+                        backgroundColor: 'transparent',
+                        borderDash: [5, 3],
+                        yAxisID: 'y-co2',
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointRadius: 2,
+                        spanGaps: true,
+                    },
                 ]
             },
             options: {
@@ -84,8 +109,27 @@ export class GraphCard extends Component {
                         position: 'right',
                         title: { display: true, text: 'Humidity (%)' },
                         grid: { drawOnChartArea: false },
+                        offset: true,
                         min: 0,
                         max: 100
+                    },
+                    'y-press': {
+                        type: 'linear',
+                        position: 'right',
+                        title: { display: true, text: 'Pressure (hPa)' },
+                        grid: { drawOnChartArea: false },
+                        offset: true,
+                        suggestedMin: 950,
+                        suggestedMax: 1050
+                    },
+                    'y-co2': {
+                        type: 'linear',
+                        position: 'right',
+                        title: { display: true, text: 'CO2 (ppm)' },
+                        grid: { drawOnChartArea: false },
+                        offset: true,
+                        suggestedMin: 400,
+                        suggestedMax: 2000
                     }
                 }
             }

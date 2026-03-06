@@ -26,6 +26,7 @@
                         <group string="Configuration">
                             <field name="location_id" options="{'no_create': True}"/>
                             <field name="ip_address" placeholder="192.168.8.x"/>
+                            <field name="camera_url" placeholder="http://camera.local/stream"/>
                         </group>
                         <group string="Current Status">
                             <field name="current_temperature" readonly="1"/>
@@ -59,6 +60,7 @@
                 <field name="name"/>
                 <field name="location_id"/>
                 <field name="ip_address"/>
+                <field name="camera_url"/>
                 <field name="last_sync" widget="datetime"/>
             </list>
         </field>

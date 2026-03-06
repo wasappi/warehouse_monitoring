@@ -3,6 +3,12 @@ import { registry } from "@web/core/registry";
 import { LazyComponent } from "@web/core/assets";
 
 class WarehouseMonitoringDashboardLoader extends Component {
+    static props = {
+        action: { type: Object, optional: true },
+        actionId: { type: Number, optional: true },
+        updateActionState: { type: Function, optional: true },
+        className: { type: String, optional: true },
+    };
     static components = { LazyComponent };
     static template = xml`
         <LazyComponent 

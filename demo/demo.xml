@@ -10,6 +10,16 @@
             <field name="category">hum</field>
         </record>
 
+        <record id="measure_category_pressure" model="warehouse_monitoring.measure_category">
+            <field name="name">Pressure</field>
+            <field name="category">press</field>
+        </record>
+
+        <record id="measure_category_gas" model="warehouse_monitoring.measure_category">
+            <field name="name">CO2</field>
+            <field name="category">co2</field>
+        </record>
+
         <record id="measure_unit_degree" model="warehouse_monitoring.measure_unit">
             <field name="name">Celsius degree</field>
             <field name="symbol">°C</field>
@@ -18,6 +28,16 @@
         <record id="measure_unit_relative_humidity" model="warehouse_monitoring.measure_unit">
             <field name="name">Relative humidity</field>
             <field name="symbol">%</field>
+        </record>
+
+        <record id="measure_unit_pressure_hpa" model="warehouse_monitoring.measure_unit">
+            <field name="name">Hectopascal</field>
+            <field name="symbol">hPa</field>
+        </record>
+
+        <record id="measure_unit_gas_ohm" model="warehouse_monitoring.measure_unit">
+            <field name="name">CO2 PPM</field>
+            <field name="symbol">ppm</field>
         </record>
 
         <record id="measure_category_humidity" model="warehouse_monitoring.measure_category">

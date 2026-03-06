@@ -35,6 +35,34 @@ dashboardRegistry.add("latest_hum", {
     }),
 });
 
+dashboardRegistry.add("latest_press", {
+    id: "latest_press",
+    description: "Latest pressure value",
+    Component: ValueCard,
+    size: 1,
+    props: (stats) => ({
+        title: "Current pressure",
+        value: stats.latest_press ? stats.latest_press.value : "—",
+        unit: stats.latest_press ? stats.latest_press.unit : "",
+        date: stats.latest_press ? stats.latest_press.date : null,
+        icon: "fa fa-tachometer",
+    }),
+});
+
+dashboardRegistry.add("latest_co2", {
+    id: "latest_co2",
+    description: "Latest CO2 value",
+    Component: ValueCard,
+    size: 1,
+    props: (stats) => ({
+        title: "Current CO2",
+        value: stats.latest_co2 ? stats.latest_co2.value : "—",
+        unit: stats.latest_co2 ? stats.latest_co2.unit : "",
+        date: stats.latest_co2 ? stats.latest_co2.date : null,
+        icon: "fa fa-industry",
+    }),
+});
+
 dashboardRegistry.add("temp_delta", {
     id: "temp_delta",
     description: "Temperature variation over the period",
@@ -76,10 +104,10 @@ dashboardRegistry.add("live_stream", {
     description: "Live video stream feed",
     Component: MediaCard,
     size: 12,
-    props: () => ({
+    props: (stats) => ({
         title: "Live Camera Feed",
-        url: "https://cam1.darkmode.sh",
-        height: "258px",
+        url: stats?.camera_url || "",
+        height: "388px",
     }),
 });
 
