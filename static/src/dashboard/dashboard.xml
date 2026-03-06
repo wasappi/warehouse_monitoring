@@ -9,48 +9,45 @@
         <div class="o_content flex-grow-1 overflow-y-auto o_standard_view pb-5">
             <div class="o_container p-3 p-md-4">
 
-                <div class="mb-3 d-flex align-items-center justify-content-between">
-                    <div class="d-flex gap-2 align-items-center">
-                        <Dropdown>
-                            <button class="btn btn-light border rounded-pill fw-bold sm" type="button">
-                                <t t-esc="currentStation.name"/>
-                                <i class="fa fa-chevron-down ms-2 small opacity-75"/>
-                            </button>
-                            <t t-set-slot="content">
-                                <DropdownItem onSelected="() => selectStation({ id: null, name: 'All Stations' })">
-                                    All Stations
+                <div class="mb-3 d-flex gap-2 align-items-center">
+                    <Dropdown>
+                        <button class="btn btn-light border rounded-pill fw-bold sm" type="button">
+                            <t t-esc="currentStation.name"/>
+                            <i class="fa fa-chevron-down ms-2 small opacity-75"/>
+                        </button>
+                        <t t-set-slot="content">
+                            <DropdownItem onSelected="() => selectStation({ id: null, name: 'All Stations' })">
+                                All Stations
+                            </DropdownItem>
+                            <t t-foreach="stations.data" t-as="station" t-key="station.id">
+                                <DropdownItem onSelected="() => selectStation(station)">
+                                    <t t-esc="station.name"/>
                                 </DropdownItem>
-                                <t t-foreach="stations.data" t-as="station" t-key="station.id">
-                                    <DropdownItem onSelected="() => selectStation(station)">
-                                        <t t-esc="station.name"/>
-                                    </DropdownItem>
-                                </t>
                             </t>
-                        </Dropdown>
+                        </t>
+                    </Dropdown>
 
-                        <Dropdown>
-                            <button class="btn btn-light border rounded-pill fw-bold sm" type="button">
-                                <t t-esc="currentPeriod.label"/>
-                                <i class="fa fa-chevron-down ms-2 small opacity-75"/>
-                            </button>
-                            <t t-set-slot="content">
-                                <t t-foreach="periods" t-as="period" t-key="period.days">
-                                    <DropdownItem onSelected="() => selectPeriod(period)">
-                                        <t t-esc="period.label"/>
-                                    </DropdownItem>
-                                </t>
+                    <Dropdown>
+                        <button class="btn btn-light border rounded-pill fw-bold sm" type="button">
+                            <t t-esc="currentPeriod.label"/>
+                            <i class="fa fa-chevron-down ms-2 small opacity-75"/>
+                        </button>
+                        <t t-set-slot="content">
+                            <t t-foreach="periods" t-as="period" t-key="period.days">
+                                <DropdownItem onSelected="() => selectPeriod(period)">
+                                    <t t-esc="period.label"/>
+                                </DropdownItem>
                             </t>
-                        </Dropdown>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <div class="d-flex align-items-center gap-2 px-2 py-1 border rounded-pill bg-light shadow-sm">
-                            <i class="fa fa-lightbulb-o text-warning" aria-hidden="true"/>
-                            <div class="form-check form-switch m-0">
-                                <input class="form-check-input" type="checkbox" role="switch" t-att-checked="light.isOn" t-att-disabled="!currentStation.ip_address || light.isBusy" t-on-change="onToggleLight"/>
-                                <label class="form-check-label small fw-semibold">Warehouse Light</label>
-                            </div>
+                        </t>
+                    </Dropdown>
+                </div>
+
+                <div class="row g-2 mb-2">
+                    <t t-if="lightControlItem">
+                        <div class="col-12 px-2">
+                            <t t-component="lightControlItem.Component" t-props="lightControlProps"/>
                         </div>
-                    </div>
+                    </t>
                 </div>
 
                 <div class="o_renderer">

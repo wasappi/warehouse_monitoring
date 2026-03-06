@@ -2,6 +2,7 @@ import { registry } from "@web/core/registry";
 import { ValueCard } from "./value_card/value_card";
 import { MediaCard } from "./media_card/media_card";
 import { GraphCard } from "./graph_card/graph_card";
+import { LightControlCard } from "./light_control_card/light_control_card";
 
 const dashboardRegistry = registry.category("warehouse_monitoring");
 
@@ -108,6 +109,16 @@ dashboardRegistry.add("live_stream", {
         title: "Live Camera Feed",
         url: stats?.camera_url || "",
         height: "388px",
+    }),
+});
+
+dashboardRegistry.add("light_control", {
+    id: "light_control",
+    description: "Warehouse light control",
+    Component: LightControlCard,
+    size: 12,
+    props: () => ({
+        label: "Warehouse Light",
     }),
 });
 

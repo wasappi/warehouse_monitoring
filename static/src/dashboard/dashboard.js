@@ -123,6 +123,20 @@ export class WarehouseMonitoringDashboard extends Component {
         return this.items.find((item) => item.id === "live_stream");
     }
 
+    get lightControlItem() {
+        return this.items.find((item) => item.id === "light_control");
+    }
+
+    get lightControlProps() {
+        const baseProps = this.lightControlItem?.props ? this.lightControlItem.props(this.statistics.data) : {};
+        return Object.assign({}, baseProps, {
+            isOn: this.light.isOn,
+            isBusy: this.light.isBusy,
+            disabled: !this.currentStation.ip_address,
+            onToggle: this.onToggleLight,
+        });
+    }
+
     get graphItems() {
         const graphIds = ["temp_humid_trend", "co2_trend", "pressure_trend"];
         return graphIds
