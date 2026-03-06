@@ -111,15 +111,42 @@ dashboardRegistry.add("live_stream", {
     }),
 });
 
-// Graphcard
+// Graph cards - split by data type
 dashboardRegistry.add("temp_humid_trend", {
     id: "temp_humid_trend",
-    description: "Temp vs Humidity Trend",
+    description: "Temperature & Humidity Trend",
     Component: GraphCard,
     size: 12,
-    height: "450px",
+    height: "400px",
     props: (stats) => ({
-        label: "Warehouse Environment",
-        data: stats.chart_data, 
+        label: "Temperature & Humidity",
+        data: stats.chart_data || {},
+        visibleSeries: ["temp", "humid"],
+    }),
+});
+
+dashboardRegistry.add("co2_trend", {
+    id: "co2_trend",
+    description: "CO2 Level Trend",
+    Component: GraphCard,
+    size: 12,
+    height: "400px",
+    props: (stats) => ({
+        label: "CO2 Levels",
+        data: stats.chart_data || {},
+        visibleSeries: ["co2"],
+    }),
+});
+
+dashboardRegistry.add("pressure_trend", {
+    id: "pressure_trend",
+    description: "Pressure Trend",
+    Component: GraphCard,
+    size: 12,
+    height: "400px",
+    props: (stats) => ({
+        label: "Atmospheric Pressure",
+        data: stats.chart_data || {},
+        visibleSeries: ["press"],
     }),
 });

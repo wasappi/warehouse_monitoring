@@ -123,8 +123,11 @@ export class WarehouseMonitoringDashboard extends Component {
         return this.items.find((item) => item.id === "live_stream");
     }
 
-    get graphItem() {
-        return this.items.find((item) => item.id === "temp_humid_trend");
+    get graphItems() {
+        const graphIds = ["temp_humid_trend", "co2_trend", "pressure_trend"];
+        return graphIds
+            .map((id) => this.items.find((item) => item.id === id))
+            .filter(Boolean);
     }
 }
 

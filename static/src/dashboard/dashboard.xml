@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="row g-2 mt-1">
-                        <t t-if="graphItem">
+                        <t t-foreach="graphItems" t-as="graphItem" t-key="graphItem.id">
                             <Card className="'col-12'">
                                 <t t-set="itemProps" t-value="graphItem.props ? graphItem.props(statistics.data) : {'data': statistics.data}"/>
                                 <t t-component="graphItem.Component" t-props="itemProps" />
